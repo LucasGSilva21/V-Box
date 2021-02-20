@@ -1,11 +1,23 @@
-const mysql = require("mysql");
-const env = process.env.NODE_ENV || "development";
-const config = require("../config/database")[env];
+const Sequelize = require('sequelize');
 
-const connection = mysql.createConnection(config);
+const env = process.env.NODE_ENV || 'development';
 
-connection.connect(function (err) {
-  if (err) return console.log(err);
-});
+const config = require('../config/database.js')[env];
 
-module.exports = connection;
+const models = [];
+
+class Database {
+  constructor() {
+    this.init();
+  }
+
+  init(){
+    this.connection = new Sequelize(config);
+
+    models
+    .map(model => model.init(this.connection))
+    .map(model => models.associate && model.associate(this.connection.models));
+  }
+}
+
+module.exports = new Database();
