@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const routes = require("./routes/index.routes.js");
 
 require("./database/index");
 
@@ -16,6 +17,7 @@ class App {
 
   routes() {
     this.server.use(cors());
+    this.server.use(routes);
   }
 }
 

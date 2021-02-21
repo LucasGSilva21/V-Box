@@ -1,10 +1,12 @@
 const Sequelize = require('sequelize');
 
+const User = require('../models/UserModel');
+
 const env = process.env.NODE_ENV || 'development';
 
 const config = require('../config/database.js')[env];
 
-const models = [];
+const models = [User];
 
 class Database {
   constructor() {
