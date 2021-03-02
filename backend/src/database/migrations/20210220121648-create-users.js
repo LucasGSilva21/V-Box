@@ -24,6 +24,7 @@ module.exports = {
     phone: {
       type: Sequelize.CHAR(11),
       allowNull: false,
+      unique: true,
     },
     birth: {
       type: Sequelize.DATEONLY,
