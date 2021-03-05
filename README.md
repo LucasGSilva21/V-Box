@@ -34,7 +34,7 @@ $ cd backend
 $ yarn
 
 # Execute a aplicação em modo de desenvolvimento
-$ yarn start
+$ yarn dev
 
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
@@ -73,4 +73,4 @@ Feito por Lucas Gabriel  👋 Entre em contato!
 ---
 
 ## 📝 Licença
-Este projeto esta sobe a licença [MIT](./LICENSE).
+Este projeto esta sobe a licença [MIT](./LICENSE.md).
